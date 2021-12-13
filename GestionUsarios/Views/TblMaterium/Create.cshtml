@@ -1,0 +1,48 @@
+﻿@model GestionUsarios.Models.TblMaterium
+
+@{
+    ViewData["Title"] = "Create";
+    Layout="~/Views/Shared/Template/_Layoutprivate.cshtml";
+}
+
+<h2>Create</h2>
+
+<h4>TblMaterium</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MtrNombre" class="control-label"></label>
+                <input asp-for="MtrNombre" class="form-control" />
+                <span asp-validation-for="MtrNombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MtrModulo" class="control-label"></label>
+                <input asp-for="MtrModulo" class="form-control" />
+                <span asp-validation-for="MtrModulo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MtrCurso" class="control-label"></label>
+                <input asp-for="MtrCurso" class="form-control" />
+                <span asp-validation-for="MtrCurso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FkPgmIdPrograma" class="control-label"></label>
+                <select asp-for="FkPgmIdPrograma" class ="form-control" asp-items="ViewBag.FkPgmIdPrograma"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

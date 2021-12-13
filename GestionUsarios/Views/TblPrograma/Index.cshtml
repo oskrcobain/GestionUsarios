@@ -1,0 +1,54 @@
+﻿@model IEnumerable<GestionUsarios.Models.TblPrograma>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout="~/Views/Shared/Template/_Layoutprivate.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PgmNombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PgmDuracion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PgmCosto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PgmAula)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PgmNombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PgmDuracion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PgmCosto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PgmAula)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PkPgmIdPrograma">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PkPgmIdPrograma">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PkPgmIdPrograma">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

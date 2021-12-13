@@ -1,0 +1,37 @@
+﻿@model GestionUsarios.Models.TblAlumno
+
+@{
+    ViewData["Title"] = "Details";
+    Layout="~/Views/Shared/Template/_Layoutprivate.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TblAlumno</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AlmNombre)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AlmNombre)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AlmApellido)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AlmApellido)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AlmCreditos)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AlmCreditos)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.PkAlmIdAlumno">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

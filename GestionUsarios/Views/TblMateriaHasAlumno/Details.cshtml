@@ -1,0 +1,31 @@
+﻿@model GestionUsarios.Models.TblMateriaHasAlumno
+
+@{
+    ViewData["Title"] = "Details";
+    Layout="~/Views/Shared/Template/_Layoutprivate.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TblMateriaHasAlumno</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FkAlmIdAlumnoNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FkAlmIdAlumnoNavigation.PkAlmIdAlumno)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FkMtrIdMateriaNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FkMtrIdMateriaNavigation.PkMtrIdMateria)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.PkAlmHasMtrIdAlumnoHasMateria">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
